@@ -26,7 +26,7 @@ CREATE TABLE club(z_number INT, name CHAR(20), l_name CHAR(20), levels CHAR(20),
 
 INSERT INTO users VALUES(23440200, "Pablo", "Adell", 20, "Intermediate");
 INSERT INTO users VALUES(23440300, "Sara", "Bortolotti", 19, "Beginner");
-INSERT INTO users VALUESVALUES(23440400, "Sam", "Smith", 22, "Beginner");
+INSERT INTO users VALUES(23440400, "Sam", "Smith", 22, "Beginner");
 INSERT INTO users VALUES(23440500, "Darth", "Vade", 27, "Advanced");
 
 INSERT INTO instructors VALUES(01, "Tanner", "Palm", 3, 23450988);
@@ -62,14 +62,57 @@ INSERT INTO walls VALUES(2, "Advanced", "good", "FAU");
 INSERT INTO walls VALUES(3, "Intermediate", "needs repair", "FAU");  
 INSERT INTO walls VALUES(4, "Intermediate", "good", "FAU");  
 
-(destination CHAR(100), s_date CHAR(60), e_date CHAR(60), equipment CHAR(100), CONSTRAINT PK_TRIP PRIMARY KEY(destination, s_date, e_date))
-INSERT INTO trips VALUES("Coral Cliffs Rock Climbing Center", 2018-04-11, )
+INSERT INTO trip VALUES("Coral Cliffs Rock Climbing Center", '2018-04-11', '2018-04-11', "none");
+INSERT INTO trip VALUES("MT. Everest", '2018-05-01', '2018-06-03', "Rope, harness");
+INSERT INTO trip VALUES("Rocky mountains", '2019-01-23', '2019-01-30', "Rope");
+INSERT INTO trip VALUES("Tallahassee Rock Gym", '2018-07-23', '2018-07-24', "none");
+
+
+INSERT INTO equipement VALUES(1, "rope", "good", "y");
+INSERT INTO equipement VALUES(2, "rope", "needs repacement", "y");
+INSERT INTO equipement VALUES(3, "rope", "good", "n");
+INSERT INTO equipement VALUES(4, "rope", "new", "n");
+INSERT INTO equipement VALUES(5, "harness", "needs repacement", "n");
+INSERT INTO equipement VALUES(6, "harness", "good", "n");
+INSERT INTO equipement VALUES(7, "harness", "good", "y");
+INSERT INTO equipement VALUES(8, "harness", "new", "y");
+INSERT INTO equipement VALUES(9, "Carabiners", "good", "y");
+INSERT INTO equipement VALUES(10, "Carabiners", "new", "n");
+INSERT INTO equipement VALUES(11, "Carabiners", "good", "y");
+INSERT INTO equipement VALUES(12, "Carabiners", "needs repacement", "y");
+INSERT INTO equipement VALUES(13, "Belay & Rappel Devices", "good", "n");
+INSERT INTO equipement VALUES(14, "Belay & Rappel Devices", "needs repacement", "y");
+INSERT INTO equipement VALUES(15, "Belay & Rappel Devices", "good", "n");
+INSERT INTO equipement VALUES(16, "Belay & Rappel Devices", "new", "y");
+
+
+INSERT INTO u_rent VALUES(23440200, 4, "good", '2018-03-23', '2018-03-23');
+INSERT INTO u_rent VALUES(23440200, 5, "needs replacement", '2018-03-23', '2018-03-23');
+INSERT INTO u_rent VALUES(23440200, 9, "good", '2018-03-23', '2018-03-23');
+INSERT INTO u_rent VALUES(23440200, 16, "new", '2018-03-23', '2018-03-23');
+	   
+INSERT INTO u_rent VALUES(23440500, 3, "good", '2018-03-23', '2018-03-24');
+INSERT INTO u_rent VALUES(23440500, 7, "good", '2018-03-23', '2018-03-24');
+INSERT INTO u_rent VALUES(23440500, 10, "new", '2018-03-23', '2018-03-24');
+INSERT INTO u_rent VALUES(23440500, 15, "good", '2018-03-23', '2018-03-24');
+	   
+INSERT INTO u_rent VALUES(23440400, 2, "needs replacement", '2018-03-24', '2018-03-24');
+INSERT INTO u_rent VALUES(23440400, 8, "new", '2018-03-24', '2018-03-24');
+INSERT INTO u_rent VALUES(23440400, 11, "good", '2018-03-24', '2018-03-24');
+INSERT INTO u_rent VALUES(23440400, 14, "needs replacement", '2018-03-24', '2018-03-24');
+	   
+INSERT INTO g_rent VALUES(01, 2, "needs replacement", '2018-03-23', '2018-03-23');
+INSERT INTO g_rent VALUES(01, 8, "new", '2018-03-23', '2018-03-23');
+INSERT INTO g_rent VALUES(01, 11, "good", '2018-03-23', '2018-03-23');
+INSERT INTO g_rent VALUES(01, 14, "needs replacement", '2018-03-23', '2018-03-23');
+	   
+INSERT INTO g_rent VALUES(02, 1, "good replacement", '2018-03-23', '2018-03-23');
+INSERT INTO g_rent VALUES(02, 6, "good", '2018-03-23', '2018-03-23');
+INSERT INTO g_rent VALUES(02, 12, "needs repacement", '2018-03-23', '2018-03-23');
+INSERT INTO g_rent VALUES(02, 13, "good", '2018-03-23', '2018-03-23');
 
 
 
-
-
-
-
-
-
+INSERT INTO club VALUES(23440200, "Pablo", "Adell", "Intermediate", 1);
+INSERT INTO club VALUES(23440300, "Sara", "Bortolotti", "Beginner", 1);
+ INSERT INTO club VALUES(23440500, "Darth", "Vade", "Advanced",5);

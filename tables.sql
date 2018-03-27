@@ -23,6 +23,19 @@ CREATE TABLE membership(g_id INT, membership CHAR(20), s_date DATE, e_date DATE,
 
 CREATE TABLE club(z_number INT, name CHAR(20), l_name CHAR(20), levels CHAR(20), time_club INT, CONSTRAINT PK_CLUB PRIMARY KEY(z_number), CONSTRAINT FK_Z_NUMBER FOREIGN KEY(z_number) REFERENCES users);
 
+CREATE TABLE s_credentials (id INT, pword CHAR(20), CONSTRAINT FK_ID_U FOREIGN KEY(id) REFERENCES users(z_number), CONSTRAINT PK_U_CREDENTIALS PRIMARY KEY(id));
+						   
+CREATE TABLE g_credentials(id INT, password CHAR(20), CONSTRAINT FK_ID_G FOREIGN KEY(id) REFERENCES guest(g_id), CONSTRAINT PK_G_CREDENTIALS PRIMARY KEY(id));
+
+INSERT INTO s_credentials VALUES(23440200, "iloverealmadrid");
+INSERT INTO s_credentials VALUES(23440300, "iloverealmadrid");
+INSERT INTO s_credentials VALUES(23440400, "iloverealmadrid");
+INSERT INTO s_credentials VALUES(23440500, "iloverealmadrid");
+
+INSERT INTO g_credentials VALUES(01, "iloverealmadrid");
+INSERT INTO g_credentials VALUES(02, "iloverealmadrid");
+INSERT INTO g_credentials VALUES(03, "iloverealmadrid");
+INSERT INTO g_credentials VALUES(04, "iloverealmadrid");
 
 INSERT INTO users VALUES(23440200, "Pablo", "Adell", 20, "Intermediate");
 INSERT INTO users VALUES(23440300, "Sara", "Bortolotti", 19, "Beginner");
@@ -115,4 +128,9 @@ INSERT INTO g_rent VALUES(02, 13, "good", '2018-03-23', '2018-03-23');
 
 INSERT INTO club VALUES(23440200, "Pablo", "Adell", "Intermediate", 1);
 INSERT INTO club VALUES(23440300, "Sara", "Bortolotti", "Beginner", 1);
- INSERT INTO club VALUES(23440500, "Darth", "Vade", "Advanced",5);
+INSERT INTO club VALUES(23440500, "Darth", "Vade", "Advanced",5);
+
+
+
+
+

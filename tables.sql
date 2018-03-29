@@ -4,7 +4,7 @@ CREATE TABLE instructors(emp_id INT, name CHAR(20), l_name CHAR(40), exp INT, z_
 				
 CREATE TABLE membership(m_id INT, g_id INT, membership_type CHAR(20), s_date DATE, e_date DATE, CONSTRAINT PK_MEMBERSHIP PRIMARY KEY(g_id));
 				
-CREATE TABLE guest(g_id INT, name CHAR(20), l_name CHAR(40), age INT, membership INT, CONSTRAINT FK_MEMBERSHIP FOREIGN KEY (membership) REFERENCES membership(m_id), CONSTRAINT PK_GUEST PRIMARY KEY(g_id));
+CREATE TABLE guest(g_id CHAR(20), name CHAR(20), l_name CHAR(40), age INT, membership INT, CONSTRAINT FK_MEMBERSHIP FOREIGN KEY (membership) REFERENCES membership(m_id), CONSTRAINT PK_GUEST PRIMARY KEY(g_id));
 		
 		//MORE THAN ONE INSTRUCTOR CAN TEACH THE SAME COURSE
 CREATE TABLE courses(course_id INT, instructor INT, level CHAR(20), price INT,CONSTRAINT FK_COURSE_id FOREIGN KEY(instructor) REFERENCES instructors(emp_id), CONSTRAINT PK_COURSE PRIMARY KEY(course_id, instructor));  
@@ -50,8 +50,8 @@ INSERT INTO instructors VALUES(05, "Rachel", "Bloom", 9, 23450985);
 INSERT INTO membership VALUES(01, , monthly, "21-03-2018", "20-04-2018");
 INSERT INTO membership VALUES(02, , daily, "21-03-2018", "21-03-2018");
 
-INSERT INTO guest VALUES(01, "Will", "Glass", 21, 01);
-INSERT INTO guest VALUES(02, "Isabelle", "Red", 20, 02);
+INSERT INTO guest VALUES("wglass@gmale.com", "Will", "Glass", 21, 01);
+INSERT INTO guest VALUES("isared@yahooooo.com", "Isabelle", "Red", 20, 02);
 
 
 INSERT INTO courses VALUES(01, 01, "Beginner", 20);

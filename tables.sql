@@ -3,7 +3,7 @@ CREATE TABLE users(z_number INT, name CHAR(20), l_name CHAR(40), age INT,  level
 				
 CREATE TABLE instructors(emp_id INT, name CHAR(20), l_name CHAR(40), exp INT, z_number INT, CONSTRAINT FK_ZNUMBER FOREIGN KEY(z_number) REFERENCES users(z_number), CONSTRAINT PK_INSTRUCTORS PRIMARY KEY(emp_id));
 				
-CREATE TABLE membership(m_id INT, g_id INT, membership_type CHAR(20), s_date DATE, e_date DATE, CONSTRAINT PK_MEMBERSHIP PRIMARY KEY(g_id));
+CREATE TABLE membership(m_id INT AUTOINCREMENT, g_id INT, membership_type CHAR(20), s_date DATE, e_date DATE, CONSTRAINT PK_MEMBERSHIP PRIMARY KEY(g_id));
 				
 CREATE TABLE guest(g_id CHAR(20), name CHAR(20), l_name CHAR(40), age INT, membership INT, CONSTRAINT FK_MEMBERSHIP FOREIGN KEY (membership) REFERENCES membership(m_id), CONSTRAINT PK_GUEST PRIMARY KEY(g_id));
 		

@@ -1,13 +1,13 @@
 <?php
-$conn = null;
+global $conn;
 
-$USERNAME= "";
+$USERNAME= "padell2017";
 $PASSWORD = "";
-$DB= "";
-$SERVER = "";
+$DB= "padell2017";
+$SERVER = "lamp.cse.fau.edu";
 //Establishing connection with the //
 
-function connec_DB(){
+
   try{
     $conn = new PDO("mysql:host=$SERVER; db_name=$DB, $USERNAME, $PASSWORD");
     //Connecting to the server
@@ -16,6 +16,6 @@ function connec_DB(){
     $conn = null;
     echo "Echo: " . $e->getMessage();
   }
-}
+
 
 ?>
